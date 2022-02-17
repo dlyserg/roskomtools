@@ -1,6 +1,16 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+## Package: rkn-parse
+## Version: 1.0-1
+## Section: misc
+## Architecture: all
+## Depends: bash, python3, python3-lxml, rkn-load, rkn-common
+## Maintainer: Ilya Averkov <ilya@mkpnet.ru>
+## Editor: Lyserg Diethel <kill9pid@hotmail.com>
+## Priority: extra
+## Description: roskom registry parser
+
 # Импорты Python
 import logging, sys, sqlite3, configparser, os, errno, glob
 
