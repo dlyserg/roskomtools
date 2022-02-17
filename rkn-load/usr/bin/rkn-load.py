@@ -19,15 +19,15 @@ import logging, sys, base64, signal, time, zipfile, os, configparser, sqlite3
 from suds.client import Client
 from suds.sax.text import Text
 
-logging.basicConfig(filename='/var/log/roskom.log', filemode='a', format=u'%(asctime)s %(levelname)s: %(message)s', level=logging.INFO)
-logger = logging.getLogger(__name__)
-
 # Конфигурационный файл
 config = configparser.ConfigParser()
 config.read('/etc/roskom/tools.ini')
 
 # База данных
 db = sqlite3.connect(config['roskomtools']['database'])
+
+logging.basicConfig(filename=config['log']['logfile'], filemode='a', format=u'%(asctime)s %(levelname)s: %(message)s', level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 cursor = db.cursor()
 cursor.execute("CREATE TABLE IF NOT EXISTS loads (load_id INTEGER PRIMARY KEY AUTOINCREMENT, load_when INTEGER, load_code TEXT, load_state INTEGER)")
