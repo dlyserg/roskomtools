@@ -1,6 +1,17 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+## Package: rkn-load
+## Version: 2.0-1
+## Section: misc
+## Architecture: all
+## Depends: bash, python3-suds, rkn-common
+## Maintainer: Margarita Kosobokova <zolotko92@gmail.net>
+## Editor: Lyserg Diethel <kill9pid@hotmail.com>
+## Priority: extra
+## Description: roskom registry load
+
+
 # Python
 import logging, sys, base64, signal, time, zipfile, os, configparser, sqlite3
 
