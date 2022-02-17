@@ -1,4 +1,0 @@
-#!/bin/bash
-
-ln -s /usr/bin/rkn-load.py /etc/cron.hourly/010rkn-load
-ln -s /usr/bin/rkn-parse.py /etc/cron.hourly/020rkn-parse
