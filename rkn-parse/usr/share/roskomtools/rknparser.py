@@ -1,4 +1,14 @@
 
+## Package: rknparser
+## Version: 2.0-1
+## Section: misc
+## Architecture: all
+## Depends: bash, python3, python3-lxml
+## Maintainer: Ilya Averkov <ilya@mkpnet.ru>
+## Editor: Lyserg Diethel <kill9pid@hotmail.com>
+## Priority: extra
+## Description: roskom registry parser
+
 # Сторонние пакеты
 from lxml import etree
 
