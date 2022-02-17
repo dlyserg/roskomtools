@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 ## Package: rkn-parse
-## Version: 1.0-1
+## Version: 2.0-1
 ## Section: misc
 ## Architecture: all
 ## Depends: bash, python3, python3-lxml, rkn-load, rkn-common
