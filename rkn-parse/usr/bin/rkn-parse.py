@@ -14,9 +14,6 @@
 # Импорты Python
 import logging, sys, sqlite3, configparser, os, errno, glob
 
-logging.basicConfig(filename='/var/log/roskom.log', filemode='a', format=u'%(asctime)s %(levelname)s: %(message)s', level=logging.INFO)
-logger = logging.getLogger(__name__)
-
 # Конфигурационный файл
 config = configparser.ConfigParser()
 config.read('/etc/roskom/tools.ini')
@@ -24,6 +21,9 @@ config.read('/etc/roskom/tools.ini')
 # Общие модули
 sys.path.append('/usr/share/roskomtools')
 import rknparser
+
+logging.basicConfig(filename=config['log']['logfile'], filemode='a', format=u'%(asctime)s %(levelname)s: %(message)s', level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # База данных
 db = sqlite3.connect(config['roskomtools']['database'])
