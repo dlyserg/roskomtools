@@ -1,30 +1,18 @@
 # roskomtools
-Набор простых консольных утилит для операторов связи.
+Набор простых консольных утилит для получения выгрузки Роскомнадзоровских реестров операторами связи.
 
 * ``rkn-load.py`` — осуществление выгрузки реестра запрещённых сайтов
 * ``rkn-parse.py`` — парсинг выгрузки и заполнение таблиц локальной БД SQLite
 * ``rkn-check.py`` — проверка качества блокировок
 * ``rkn-status`` — API для получения информации о выгрузках и проверках с сервера, на котором развёрнуто данное программное обеспечение
 
-© 2015–2020 ООО «Оргтехсервис» (Илья Аверков, Маргарита Кособокова, Михаил Соломатин)
-
 ## Сборка и установка
 
-Сначала необходимо сгенерировать deb-пакеты.
-
 ```bash
-git clone https://github.com/orgtechservice/roskomtools.git
-cd roskomtools
-./build.sh
-```
-
-Затем — установить зависимости и сгенерированные deb-пакеты
-
-```bash
+sudo mkdir -p /etc/roskom/
+sudo mkdir -p /var/lib/roskomtools
+sudo chmod 777 /var/lib/roskomtools
 sudo apt install python3 python3-requests python3-suds python3-lxml
-sudo dpkg -i rkn-load.deb
-sudo dpkg -i rkn-parse.deb
-sudo dpkg -i rkn-check.deb
 ```
 
 ## Использование
