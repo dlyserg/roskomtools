@@ -10,6 +10,8 @@
 
 ```bash
 sudo mkdir -p /etc/roskom/
+sudo touch /etc/roskom/tools.ini
+sudo /etc/roskom/tools.ini
 sudo mkdir -p /var/lib/roskomtools
 sudo chmod 777 /var/lib/roskomtools
 sudo apt install python3 python3-requests python3-suds python3-lxml
