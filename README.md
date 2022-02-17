@@ -13,6 +13,8 @@ sudo mkdir -p /etc/roskom/
 sudo mkdir -p /var/lib/roskomtools
 sudo chmod 777 /var/lib/roskomtools
 sudo apt install python3 python3-requests python3-suds python3-lxml
+sudo ln -s /usr/bin/rkn-load.py /etc/cron.hourly/010rkn-load
+sudo ln -s /usr/bin/rkn-parse.py /etc/cron.hourly/020rkn-parse
 ```
 
 ## Использование
