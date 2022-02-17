@@ -1,13 +1,22 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+## Package: rkn-check
+## Version: 1.1-1
+## Section: misc
+## Architecture: all
+## Depends: bash, python3, python3-requests, rkn-parse, rkn-common
+## Maintainer: Ilya Averkov <ilya.averkov@gmail.com>
+## Priority: extra
+## Description: block test tool
+
 # Импорты Python
 import time, sys, threading, signal, ipaddress, gc, configparser, sqlite3, os
 
 # Сторонние пакеты
 import requests
 
-# Наш конфигурационный файл
+# Конфигурационный файл
 config = configparser.ConfigParser()
 config.read('/etc/roskom/tools.ini')
 
