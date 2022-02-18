@@ -69,14 +69,20 @@ logging.info("Start parsing the registry...")
 
 def try_process(filename, db):
 	try:
-                if filename == 'dump.xml':
+                if 'dump.xml' in filename:
                         register = "PR"
-                elif filename == 'register.xml':
+                        print("Parsing the zapret registry...")
+                        logging.info("Start parsing the zapret registry...")
+                elif 'register.xml' in filename:
                         register = "SR"
+                        print("Parsing the soc registry...")
+                        logging.info("Start parsing the soc registry...")
                 else:
                         register = ""
+
                 rknparser.parse_registry(filename, db, register)
 #		rknparser.resolve_all(filename, db)
+
 	except OSError as e:
 		print("dump.xml is not accessible")
 		logging.error('%s is not accessible' % (filename))
@@ -87,11 +93,13 @@ def try_process(filename, db):
 		print("Finished")
 		logging.info('Parsing finished.')
 
-arr = os.listdir()
 if os.isatty(sys.stdin.fileno()):
-        arr = os.listdir('./')
+        path = './'
 else:
-        arr = os.listdir('/var/lib/roskomtools/')
+        path = '/var/lib/roskomtools/'
 
-for file in glob.glob("*.xml"):
-        try_process(file, db)
+lsfile = os.listdir(path)
+for file in lsfile:
+        if file.endswith(".xml"):
+                filepath = '{0}{1}'.format(path, file)
+                try_process(filepath, db)
