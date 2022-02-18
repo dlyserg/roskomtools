@@ -23,7 +23,6 @@ sys.path.append('/usr/share/roskomtools')
 import rknparser
 
 logging.basicConfig(filename=config['log']['logfile'], filemode='a', format=u'%(asctime)s %(levelname)s: %(message)s', level=logging.INFO)
-logger = logging.getLogger(__name__)
 
 # База данных
 db = sqlite3.connect(config['roskomtools']['database'])
